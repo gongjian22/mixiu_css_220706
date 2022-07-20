@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.7;
+  color: #777;
+  padding: 10px;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right, rgba(126, 214, 110, 0.37), rgba(40, 180, 133, 0.356)), url('../img/city1.jpg');
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  background-color: red;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header .heading-primary {
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation: moveInLeft 3s ease-in-out;
+  /* animation-delay: 2s; */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 15px;
+  animation: moveInRight 3s ease-in-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.btn-animate {
+  animation: moveInButton 4s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  /* background-color: yellow; */
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
+}
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(30PX);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right, rgba(126, 214, 110, 0.37), rgba(40, 180, 133, 0.356)), url('../img/city1.jpg');
+  background-size: cover;
+  transform: skewY(-7deg);
+}
+
+.section-features .row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 10rem;
+  gap: 2rem;
+}
+
+.section-features .row .feature-box {
+  background-color: rgba(255, 255, 255);
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
+  transition: all .3s;
+}
+
+.section-features .row .feature-box .feature-box__icon {
+  font-size: 6rem;
+  color: springgreen;
+}
+
+.section-features .row .feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.03);
+}
